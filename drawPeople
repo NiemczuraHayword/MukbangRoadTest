@@ -1,0 +1,118 @@
+//josh: draws all people
+drawSincere(50,300,40);
+drawDavid(150,300,40);
+drawJosh(250,300,40);
+
+//josh: draws josh
+function drawJosh(posx,posy,radius){
+  penUp();
+  penColor(rgb(235,190,110)); //josh skin tone
+  drawHead(posx,posy,radius);
+  penColor("#000000"); //josh hair color
+  drawHair(posx,posy,radius);
+  drawFace2(posx,posy,radius);
+  turnRight();
+}
+//josh: draws david
+function drawDavid(posx,posy,radius){
+  penUp();
+  penColor(rgb(255,220,200)); //david skin tone
+  drawHead(posx,posy,radius);
+  penColor("#593000"); //david hair color
+  drawHair(posx,posy,radius);
+  drawFace(posx,posy,radius);
+  turnRight();
+}
+//josh: draws sincere
+function drawSincere(posx,posy, radius){
+  penUp();
+  penColor(rgb(120,70,0)); //sincere skin tone
+  drawHead(posx,posy,radius);
+  penColor("#000000"); //sincere hair color
+  drawHair(posx,posy,radius);
+  drawFace(posx,posy,radius);
+  turnRight();
+}
+//josh: draws face
+function drawFace(posx,posy,radius){
+  drawEyes(posx,posy,radius);
+  drawNose(posx,posy,radius);
+  drawMouth(posx,posy,radius);
+}
+//josh: draws eyes
+function drawEyes(posx,posy,radius){
+  penUp();
+  moveTo(posx-(radius*.35),posy-(radius*.1));
+  penColor(rgb(255,255,255));
+  penDown;
+  dot(radius*.2)
+  penColor(rgb(0,0,0));
+  dot(radius*.15);
+  penUp();
+  moveTo(posx+(radius*.35),posy-(radius*.1));
+  penColor(rgb(255,255,255));
+  penDown;
+  dot(radius*.2)
+  penColor(rgb(0,0,0));
+  dot(radius*.15);
+  penUp();
+}
+//josh: draws the head circle
+function drawHead(posx,posy,radius){
+  penUp;
+  moveTo(posx,posy);
+  penDown();
+  dot(radius);
+  penUp();
+}
+//josh: draws hair
+function drawHair(posx,posy,radius){
+  penUp();
+  moveTo(posx-radius,posy);
+  penDown();
+  penWidth(radius*.2);
+  arcRight(180, radius);
+  penUp;
+}
+//josh: draws the nose arc
+function drawNose(posx,posy,radius){
+  penUp();
+  penColor("#000000")
+  penWidth(3)
+  moveTo(posx,posy+(radius*.25));
+  turnLeft();
+  penDown();
+  arcLeft(180,radius*.1);
+}
+//josh: drawMouth
+function drawMouth(posx,posy,radius){
+  penUp();
+  penColor("#DD0000");
+  moveTo(posx,posy+(radius*.6));
+  penDown();
+  dot(radius*0.25);
+}
+//josh: draw small eyes
+function drawEyes2(posx,posy,radius){
+  penUp();
+  moveTo(posx-(radius*.35),posy-(radius*.1));
+  penColor(rgb(255,255,255));
+  penDown;
+  dot(radius*.08)
+  penColor(rgb(0,0,0));
+  dot(radius*.05);
+  penUp();
+  moveTo(posx+(radius*.35),posy-(radius*.1));
+  penColor(rgb(255,255,255));
+  penDown;
+  dot(radius*.08)
+  penColor(rgb(0,0,0));
+  dot(radius*.05);
+  penUp();
+}
+//josh: draws josh's face
+function drawFace2(posx,posy,radius){
+  drawEyes2(posx,posy,radius);
+  drawNose(posx,posy,radius);
+  drawMouth(posx,posy,radius);
+}
